@@ -14,6 +14,18 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+
+    <dependency>
+     <groupId>com.opencsv</groupId>
+     <artifactId>opencsv</artifactId>
+     <version>3.9</version>
+  </dependency>
+
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons−collections4</artifactId>
+      <version>4.1</version>
+    </dependency>
   </dependencies>
 
 
@@ -55,10 +67,33 @@
           <archive>
           <manifest>
             <!-- Jar file entry point -->
-            <mainClass>com.mkyong.core.utils.App</mainClass>
+            <mainClass>l.App</mainClass>
           </manifest>
           </archive>
         </configuration>
+      </plugin>
+
+      <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <version>3.0.0</version>
+        <configuration>
+          <descriptorRefs>
+            <descriptorRef>jar-with-dependencies</descriptorRef>
+          </descriptorRefs>
+          <archive>
+            <manifest> <mainClass>l.App</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+        <executions>
+          <execution>
+            <id>make-assembly</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+          </execution>
+       </executions>
       </plugin>
 
     </plugins>
