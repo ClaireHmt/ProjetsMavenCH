@@ -3,6 +3,7 @@ package l;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
+import l.App;
 
 /**
  * Unit test for simple App.
@@ -33,6 +34,9 @@ public class AppTest
      */
     public void testApp()
     {
+    	System.out.println("App.max(4, 5) : " + App.max(4, 5));
+    	System.out.println("App.max(5,4) : " + App.max(5,4));
+    	assertEquals(App.max(4, 5), App.max(5,4));
         assertTrue( true );
     }
 }
